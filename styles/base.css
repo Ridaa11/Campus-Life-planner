@@ -28,9 +28,6 @@ body {
     background: var(--bg-secondary);
 }
 
-/* ========================================
-   Skip Link (Accessibility)
-   ======================================== */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -49,12 +46,10 @@ body {
     outline-offset: 2px;
 }
 
-/* ========================================
-   Header & Navigation
-   ======================================== */
+
 header {
     background: var(--primary);
-    color: white;
+    color:#1e293b;
     padding: 1rem 0;
     box-shadow: 0 2px 4px var(--shadow);
 }
@@ -92,9 +87,6 @@ nav a:focus {
     outline-offset: 2px;
 }
 
-/* ========================================
-   Layout & Container
-   ======================================== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -126,9 +118,8 @@ main {
     }
 }
 
-/* ========================================
-   Typography
-   ======================================== */
+
+
 h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -141,9 +132,6 @@ h3 {
     color: var(--text);
 }
 
-/* ========================================
-   Dashboard Stats
-   ======================================== */
 .stats-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -280,11 +268,9 @@ h3 {
     white-space: nowrap;
 }
 
-/* ========================================
-   Controls Panel
-   ======================================== */
+
 .controls-panel {
-    background: white;
+    background: rgb(104, 98, 98);
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 2rem;
@@ -351,9 +337,7 @@ h3 {
     color: var(--success);
 }
 
-/* ========================================
-   Tasks Container
-   ======================================== */
+
 .tasks-container {
     display: grid;
     gap: 1rem;
@@ -458,7 +442,7 @@ h3 {
     outline-offset: 2px;
 }
 
-/* Highlight for search matches */
+
 mark {
     background-color: #fef08a;
     padding: 2px 4px;
@@ -466,9 +450,7 @@ mark {
     font-weight: 500;
 }
 
-/* ========================================
-   Forms
-   ======================================== */
+
 #task-form {
     background: white;
     padding: 2rem;
@@ -583,9 +565,7 @@ button[type="submit"]:focus,
     outline-offset: 2px;
 }
 
-/* ========================================
-   Settings
-   ======================================== */
+
 .settings-group {
     background: white;
     padding: 1.5rem;
@@ -630,9 +610,7 @@ button[type="submit"]:focus,
     color: var(--danger);
 }
 
-/* ========================================
-   About Section
-   ======================================== */
+
 .about-content {
     background: white;
     padding: 2rem;
@@ -659,9 +637,7 @@ kbd {
     font-size: 0.875rem;
 }
 
-/* ========================================
-   Footer
-   ======================================== */
+
 footer {
     background: var(--text);
     color: white;
@@ -670,9 +646,7 @@ footer {
     margin-top: 4rem;
 }
 
-/* ========================================
-   Focus Styles (Accessibility)
-   ======================================== */
+
 *:focus {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
@@ -683,11 +657,7 @@ a:focus {
     outline-width: 3px;
 }
 
-/* ========================================
-   Responsive Design - Mobile First
-   ======================================== */
 
-/* Tablet (768px+) */
 @media (min-width: 768px) {
     header .container {
         flex-direction: row;
@@ -724,7 +694,7 @@ a:focus {
     }
 }
 
-/* Desktop (1024px+) */
+
 @media (min-width: 1024px) {
     header h1 {
         font-size: 2rem;
@@ -743,7 +713,7 @@ a:focus {
     }
 }
 
-/* Large Desktop (1440px+) */
+
 @media (min-width: 1440px) {
     .container {
         max-width: 1400px;
