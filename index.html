@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life Planner</title>
+    <link rel="stylesheet" href="styles/base.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <div class="container">
+            <h1>📚 Campus Life Planner</h1>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="#dashboard" data-page="dashboard">Dashboard</a></li>
+                    <li><a href="#tasks" data-page="tasks">Tasks</a></li>
+                    <li><a href="#add-task" data-page="add">Add Task</a></li>
+                    <li><a href="#settings" data-page="settings">Settings</a></li>
+                    <li><a href="#about" data-page="about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="page-section active" aria-labelledby="dashboard-heading">
+            <div class="container">
+                <h2 id="dashboard-heading">Academic/Stay Focused</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Tasks</h3>
+                        <p class="stat-value" id="stat-total">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Hours</h3>
+                        <p class="stat-value" id="stat-hours">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Top Tag</h3>
+                        <p class="stat-value" id="stat-top-tag">—</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Last 7 Days</h3>
+                        <p class="stat-value" id="stat-recent">0</p>
+                    </div>
+                </div>
+
+                <div class="cap-section">
+                    <h3>Weekly Time Cap</h3>
+                    <div class="cap-controls">
+                        <label for="weekly-cap">Set weekly hours cap:</label>
+                        <input type="number" id="weekly-cap" min="0" step="0.5" value="40">
+                        <button id="set-cap-btn">Set Cap</button>
+                    </div>
+                    <div class="cap-display">
+                        <div class="cap-bar">
+                            <div id="cap-progress" class="cap-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p id="cap-status" role="status" aria-live="polite" aria-atomic="true"></p>
+                    </div>
+                </div>
+
+                <div class="trend-chart">
+                    <h3>7-Day Trend</h3>
+                    <div id="trend-bars" class="trend-bars" aria-label="Bar chart showing tasks per day for the last 7 days"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tasks List Section -->
+        <section id="tasks" class="page-section active" aria-labelledby="tasks-heading">
+            <div class="container">
+                <h2 id="tasks-heading">My Tasks</h2>
+                
+                <div class="controls-panel">
+                    <div class="search-box">
+                        <label for="search-input">Search with regex:</label>
+                        <input type="text" id="search-input" placeholder="Enter regex pattern (e.g., /@\w+/ for tags)" aria-describedby="search-help">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="case-sensitive">
+                            Case sensitive
+                        </label>
+                        <small id="search-help">Use regex patterns like /study/i or /@homework/</small>
+                        <p id="search-status" role="status" aria-live="polite"></p>
+                    </div>
+
+                    <div class="sort-controls">
+                        <label for="sort-select">Sort by:</label>
+                        <select id="sort-select">
+                            <option value="date-desc">Date (Newest)</option>
+                            <option value="date-asc">Date (Oldest)</option>
+                            <option value="title-asc">Title (A-Z)</option>
+                            <option value="title-desc">Title (Z-A)</option>
+                            <option value="duration-desc">Duration (High-Low)</option>
+                            <option value="duration-asc">Duration (Low-High)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="tasks-container" class="tasks-container">
+                    <p class="empty-state">No tasks yet. Add your first task to get started!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add/Edit Task Section -->
+        <section id="add-task" class="page-section active" aria-labelledby="form-heading">
+            <div class="container">
+                <h2 id="form-heading">Add New Task</h2>
+                
+                <form id="task-form" novalidate>
+                    <input type="hidden" id="task-id">
+                    
+                    <div class="form-group">
+                        <label for="task-title">Task Title <span class="required">*</span></label>
+                        <input type="text" id="task-title" required aria-describedby="title-error">
+                        <small class="field-help">No leading/trailing spaces, no double spaces</small>
+                        <span id="title-error" class="error-message" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-duration">Duration (minutes) <span class="required">*</span></label>
+                        <input type="text" id="task-duration" required aria-describedby="duration-error">
+                        <small class="field-help">Whole or decimal numbers (e.g., 30 or 45.5)</small>
+                        <span id="duration-error" class="error-message" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-date">Due Date <span class="required">*</span></label>
+                        <input type="text" id="task-date" placeholder="YYYY-MM-DD" required aria-describedby="date-error">
+                        <small class="field-help">Format: YYYY-MM-DD (e.g., 2025-10-20)</small>
+                        <span id="date-error" class="error-message" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-tag">Tag <span class="required">*</span></label>
+                        <input type="text" id="task-tag" required aria-describedby="tag-error">
+                        <small class="field-help">Letters, spaces, and hyphens only (e.g., Homework, Study-Group)</small>
+                        <span id="tag-error" class="error-message" role="alert"></span>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="submit-btn">Add Task</button>
+                        <button type="button" id="cancel-btn" class="btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings" class="page-section active" aria-labelledby="settings-heading">
+            <div class="container">
+                <h2 id="settings-heading">Settings</h2>
+                
+                <div class="settings-group">
+                    <h3>Time Units</h3>
+                    <label for="time-unit">Display duration as:</label>
+                    <select id="time-unit">
+                        <option value="minutes">Minutes</option>
+                        <option value="hours">Hours</option>
+                    </select>
+                </div>
+
+                <div class="settings-group">
+                    <h3>Data Management</h3>
+                    <button id="export-btn" class="btn-action">📥 Export Data (JSON)</button>
+                    <div class="import-section">
+                        <label for="import-file">Import JSON file:</label>
+                        <input type="file" id="import-file" accept=".json">
+                    </div>
+                    <button id="clear-data-btn" class="btn-danger">🗑️ Clear All Data</button>
+                    <p id="settings-status" role="status" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="page-section active" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading">About Campus Life Planner</h2>
+                <div class="about-content">
+                    <p>Campus Life Planner helps students organize tasks, track time commitments, and manage their academic workload effectively.</p>
+                    
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Add, edit, and delete tasks with validation</li>
+                        <li>Track task duration and due dates</li>
+                        <li>Organize with custom tags</li>
+                        <li>Advanced regex search functionality</li>
+                        <li>Sort by date, title, or duration</li>
+                        <li>Visual statistics dashboard</li>
+                        <li>Weekly time cap monitoring</li>
+                        <li>Import/Export data as JSON</li>
+                        <li>Fully keyboard accessible</li>
+                        <li>Mobile-responsive design</li>
+                    </ul>
+
+                    <h3>Keyboard Shortcuts</h3>
+                    <ul>
+                        <li><kbd>Tab</kbd> - Navigate forward</li>
+                        <li><kbd>Shift + Tab</kbd> - Navigate backward</li>
+                        <li><kbd>Enter</kbd> / <kbd>Space</kbd> - Activate buttons</li>
+                        <li><kbd>Escape</kbd> - Cancel edit mode</li>
+                    </ul>
+
+                    <h3>Contact</h3>
+                    <p>
+                        <strong>Developer:</strong> Ridaa Isaro<br>
+                        <strong>Email:</strong> <a href="mailto:r.isaro@alustudent.com"></a>r.isaro@alustudent.com<br>
+                        <strong>GitHub:</strong> <a href="https://github.com/Ridaa11/campus-planner" target="_blank" rel="noopener">github.com/Ridaa11/campus-planner</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Campus Life Planner. Built for accessible, responsive task management.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

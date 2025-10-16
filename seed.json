@@ -1,0 +1,119 @@
+[
+  {
+    "id": "task_1697000001_abc123",
+    "title": "Complete Physics Lab Report",
+    "duration": 180,
+    "dueDate": "2025-10-20",
+    "tag": "Physics",
+    "createdAt": "2025-10-10T10:30:00.000Z",
+    "updatedAt": "2025-10-10T10:30:00.000Z"
+  },
+  {
+    "id": "task_1697000002_def456",
+    "title": "Study for Calculus Midterm",
+    "duration": 240,
+    "dueDate": "2025-10-22",
+    "tag": "Mathematics",
+    "createdAt": "2025-10-11T14:15:00.000Z",
+    "updatedAt": "2025-10-11T14:15:00.000Z"
+  },
+  {
+    "id": "task_1697000003_ghi789",
+    "title": "English Essay Draft",
+    "duration": 120,
+    "dueDate": "2025-10-18",
+    "tag": "English",
+    "createdAt": "2025-10-09T09:00:00.000Z",
+    "updatedAt": "2025-10-12T16:45:00.000Z"
+  },
+  {
+    "id": "task_1697000004_jkl012",
+    "title": "Chemistry Problem Set Three",
+    "duration": 90,
+    "dueDate": "2025-10-19",
+    "tag": "Chemistry",
+    "createdAt": "2025-10-12T11:20:00.000Z",
+    "updatedAt": "2025-10-12T11:20:00.000Z"
+  },
+  {
+    "id": "task_1697000005_mno345",
+    "title": "Group Project Meeting",
+    "duration": 60,
+    "dueDate": "2025-10-17",
+    "tag": "Team-Work",
+    "createdAt": "2025-10-08T13:30:00.000Z",
+    "updatedAt": "2025-10-08T13:30:00.000Z"
+  },
+  {
+    "id": "task_1697000006_pqr678",
+    "title": "Read History Chapters Five to Seven",
+    "duration": 150,
+    "dueDate": "2025-10-21",
+    "tag": "History",
+    "createdAt": "2025-10-13T08:00:00.000Z",
+    "updatedAt": "2025-10-13T08:00:00.000Z"
+  },
+  {
+    "id": "task_1697000007_stu901",
+    "title": "Biology Lab Practical Prep",
+    "duration": 120,
+    "dueDate": "2025-10-23",
+    "tag": "Biology",
+    "createdAt": "2025-10-14T15:45:00.000Z",
+    "updatedAt": "2025-10-14T15:45:00.000Z"
+  },
+  {
+    "id": "task_1697000008_vwx234",
+    "title": "Programming Assignment Two",
+    "duration": 300,
+    "dueDate": "2025-10-25",
+    "tag": "Computer-Science",
+    "createdAt": "2025-10-10T12:00:00.000Z",
+    "updatedAt": "2025-10-15T10:30:00.000Z"
+  },
+  {
+    "id": "task_1697000009_yza567",
+    "title": "Spanish Vocabulary Quiz Study",
+    "duration": 45,
+    "dueDate": "2025-10-16",
+    "tag": "Spanish",
+    "createdAt": "2025-10-15T17:00:00.000Z",
+    "updatedAt": "2025-10-15T17:00:00.000Z"
+  },
+  {
+    "id": "task_1697000010_bcd890",
+    "title": "Research Paper Outline",
+    "duration": 90,
+    "dueDate": "2025-10-24",
+    "tag": "Research",
+    "createdAt": "2025-10-11T10:15:00.000Z",
+    "updatedAt": "2025-10-11T10:15:00.000Z"
+  },
+  {
+    "id": "task_1697000011_efg123",
+    "title": "Economics Case Study Analysis",
+    "duration": 135,
+    "dueDate": "2025-10-26",
+    "tag": "Economics",
+    "createdAt": "2025-10-14T09:30:00.000Z",
+    "updatedAt": "2025-10-14T09:30:00.000Z"
+  },
+  {
+    "id": "task_1697000012_hij456",
+    "title": "Art History Presentation",
+    "duration": 180,
+    "dueDate": "2025-10-27",
+    "tag": "Art-History",
+    "createdAt": "2025-10-12T14:00:00.000Z",
+    "updatedAt": "2025-10-12T14:00:00.000Z"
+  },
+  {
+    "id": "task_1697000013_klm789",
+    "title": "Study Group Session",
+    "duration": 120.5,
+    "dueDate": "2025-10-18",
+    "tag": "Study-Group",
+    "createdAt": "2025-10-13T16:20:00.000Z",
+    "updatedAt": "2025-10-13T16:20:00.000Z"
+  }
+]
