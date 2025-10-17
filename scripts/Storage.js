@@ -1,12 +1,5 @@
-// storage.js - Handles localStorage persistence
-
 const STORAGE_KEY = 'campus-planner:tasks';
 const SETTINGS_KEY = 'campus-planner:settings';
-
-/**
- * Load tasks from localStorage
- * @returns {Array} Array of task objects
- */
 export function loadTasks() {
     try {
         const data = localStorage.getItem(STORAGE_KEY);
@@ -17,11 +10,6 @@ export function loadTasks() {
     }
 }
 
-/**
- * Save tasks to localStorage
- * @param {Array} tasks - Array of task objects
- * @returns {boolean} Success status
- */
 export function saveTasks(tasks) {
     try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
@@ -32,10 +20,7 @@ export function saveTasks(tasks) {
     }
 }
 
-/**
- * Load settings from localStorage
- * @returns {Object} Settings object
- */
+
 export function loadSettings() {
     try {
         const data = localStorage.getItem(SETTINGS_KEY);
@@ -49,11 +34,7 @@ export function loadSettings() {
     }
 }
 
-/**
- * Save settings to localStorage
- * @param {Object} settings - Settings object
- * @returns {boolean} Success status
- */
+
 export function saveSettings(settings) {
     try {
         localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
@@ -64,9 +45,6 @@ export function saveSettings(settings) {
     }
 }
 
-/**
- * Clear all data from localStorage
- */
 export function clearAllData() {
     try {
         localStorage.removeItem(STORAGE_KEY);
@@ -78,11 +56,6 @@ export function clearAllData() {
     }
 }
 
-/**
- * Validate imported JSON structure
- * @param {Array} data - Data to validate
- * @returns {Object} { valid: boolean, errors: Array }
- */
 export function validateImportData(data) {
     const errors = [];
     
@@ -107,20 +80,10 @@ export function validateImportData(data) {
     };
 }
 
-/**
- * Export tasks as JSON
- * @param {Array} tasks - Tasks to export
- * @returns {string} JSON string
- */
 export function exportToJSON(tasks) {
     return JSON.stringify(tasks, null, 2);
 }
 
-/**
- * Import tasks from JSON string
- * @param {string} jsonString - JSON string to parse
- * @returns {Object} { success: boolean, data: Array, errors: Array }
- */
 export function importFromJSON(jsonString) {
     try {
         const data = JSON.parse(jsonString);
